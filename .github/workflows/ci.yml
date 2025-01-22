@@ -1,4 +1,4 @@
-name: TestTasks CI
+name: Automation Tests
 
 on:
   push:
@@ -7,22 +7,20 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
+  
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+    - name: Set up JDK
+      uses: actions/setup-java@v3
       with:
-        node-version: '16'
+         java-version: '21'
 
-    - name: Install dependencies
-      run: npm install
+    - name: Build Project
+      run: mvn clean install
 
-    - name: Run tests
-      run: npm test
+    - name: Run Tests
+      run: mvn test
+
+     
