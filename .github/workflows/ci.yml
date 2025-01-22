@@ -7,20 +7,21 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   test:
     runs-on: ubuntu-latest
-  
+
     steps:
-    - name: Set up JDK
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Java
       uses: actions/setup-java@v3
       with:
-         java-version: '21'
+        java-version: '21'
+        distribution: 'temurin'  # Add this line
+        overwrite-settings: true
 
-    - name: Build Project
-      run: mvn clean install
-
-    - name: Run Tests
-      run: mvn test
-
-     
+    - name: Run tests
+      run: ./gradlew test
