@@ -23,5 +23,7 @@ jobs:
         distribution: 'temurin'  # Add this line
         overwrite-settings: true
 
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
     - name: Run tests
       run: ./gradlew test
