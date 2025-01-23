@@ -7,6 +7,8 @@ public class SearchResultPage {
 
     private SHAFT.GUI.WebDriver driver;
     SHAFT.TestData.JSON testData = new SHAFT.TestData.JSON("simpleJSON.json");
+
+
     private By firstResult = By.xpath("(//*[@data-testid='result-extras-url-link'])[1]");
     private By fourthResult = By.xpath("(//*[@data-testid='result-title-a'])[4]");
 

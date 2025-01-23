@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 
 public class LandingPage {
 
-      private   SHAFT.GUI.WebDriver driver;
+      private  SHAFT.GUI.WebDriver driver;
       private  SHAFT.TestData.JSON testData = new SHAFT.TestData.JSON("simpleJSON.json");
 
         private By searchBox = By.id("searchbox_input");
